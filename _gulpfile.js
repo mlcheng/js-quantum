@@ -11,6 +11,8 @@
 
 'use strict';
 
+/* globals require */
+
 const LIBRARIES = [
 	'binding',
 	'dragdrop',

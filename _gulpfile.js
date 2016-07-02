@@ -13,6 +13,9 @@
 
 /* globals require */
 
+const gulp = require('gulp');
+const concat = require('gulp-concat');
+
 const LIBRARIES = [
 	'binding',
 	'dragdrop',
@@ -27,9 +30,6 @@ const LIBRARIES = [
 const HEADER_FILE = 'quantum-header.js';
 const QUANTUM_JS = 'quantum.js';
 
-const gulp = require('gulp');
-const concat = require('gulp-concat');
-
 
 /**
  * Build quantum.js
@@ -39,9 +39,7 @@ gulp.task('quantum', quantum);
 
 
 
-function generateGlobs() {
-	return LIBRARIES.map(lib => `../${lib}/**/*.min.js`);
-}
+const generateGlobs = () => LIBRARIES.map(lib => `../${lib}/${lib}.min.js`);
 
 function quantum() {
 	console.log('Building quantum.js...');

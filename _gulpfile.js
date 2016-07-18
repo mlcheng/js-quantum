@@ -32,7 +32,7 @@ const QUANTUM_JS = 'quantum.js';
 
 
 /**
- * Build quantum.js
+ * Build Quantum.js
  */
 gulp.task('quantum', quantum);
 
@@ -42,7 +42,7 @@ gulp.task('quantum', quantum);
 const generateGlobs = () => LIBRARIES.map(lib => `../${lib}/${lib}.min.js`);
 
 function quantum() {
-	console.log('Building quantum.js...');
+	console.log('Building Quantum.js...');
 	let libraries = generateGlobs();
 
 	//Add library header to beginning of output

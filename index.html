@@ -8,32 +8,33 @@
 	'use strict';
 
 	/* global iqwerty */
+	document.addEventListener('DOMContentLoaded', () => {
+		var person = {
+			firstName: 'Michael',
+			lastName: 'Cheng'
+		};
 
-	var person = {
-		firstName: 'Michael',
-		lastName: 'Cheng'
-	};
+		var state = {
+			documentation: null
+		};
 
-	var state = {
-		documentation: null
-	};
+		iqwerty.binding.Model({
+			person: person,
+			state: state
+		});
 
-	iqwerty.binding.Model({
-		person: person,
-		state: state
-	});
+		function BaseStateController() {
+			state.documentation = 'No documentation opened';
+		}
 
-	function BaseStateController() {
-		state.documentation = 'No documentation opened';
-	}
+		function DocumentationStateController(section) {
+			state.documentation = section + ' is opened';
+		}
 
-	function DocumentationStateController(section) {
-		state.documentation = section + ' is opened';
-	}
-
-	iqwerty.history.States({
-		'': BaseStateController,
-		'doc/:section': DocumentationStateController
+		iqwerty.history.States({
+			'': BaseStateController,
+			'doc/:section': DocumentationStateController
+		});
 	});
 	
 	</script>
@@ -41,7 +42,7 @@
 </head>
 <body>
 
-	<div data-iq-bind-scope="person">
+	<div data-iq-bind="person">
 		The person's name is {firstName} {lastName}
 	</div>
 	<input type="text" data-iq-bind="person.firstName">

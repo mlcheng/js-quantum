@@ -22,7 +22,6 @@ const LIBRARIES = [
 	'history',
 	'http',
 	'template',
-	'test',
 	'toast',
 	'snackbar' //Snackbar needs toast to be first
 ];
@@ -46,7 +45,7 @@ function quantum() {
 	//Add library header to beginning of output
 	libraries.unshift(HEADER_FILE);
 
-	libraries.forEach(l => console.log(`${l}`));
+	libraries.forEach(l => console.log(`Adding ${l}`));
 
 	return gulp
 		.src(libraries)

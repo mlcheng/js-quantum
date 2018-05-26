@@ -23,7 +23,7 @@ const LIBRARIES = [
 	'http',
 	'template',
 	'toast',
-	'snackbar' //Snackbar needs toast to be first
+	'snackbar' // Snackbar needs toast to be first.
 ];
 
 const HEADER_FILE = 'quantum-header.js';
@@ -40,9 +40,9 @@ gulp.task('quantum', quantum);
 
 function quantum() {
 	console.log('Building Quantum.js...');
-	let libraries = LIBRARIES.map(lib => `../${lib}/${lib}.min.js`);
+	const libraries = LIBRARIES.map(lib => `../${lib}/${lib}.min.js`);
 
-	//Add library header to beginning of output
+	// Add library header to beginning of output.
 	libraries.unshift(HEADER_FILE);
 
 	libraries.forEach(l => console.log(`Adding ${l}`));

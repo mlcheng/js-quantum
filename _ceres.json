@@ -1,0 +1,10 @@
+{
+	"js": {
+		"bundle": [
+			{
+				"entry": "quantum.js",
+				"export": "iqwerty"
+			}
+		]
+	}
+}
